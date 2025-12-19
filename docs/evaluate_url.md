@@ -2,16 +2,30 @@
 
 ### ✅ Purpose: evaluate URL from syntax to network and transport layers.
 
+### Description
+
+Beside syntax checking, we take URL evaluation up another level to the network and transport layers in order to _**fend off unwanted entries into your API application**_.  For instance, _**evaluate_url**_ returns _**False**_ with:
+
+```
+- insecure practice to embed `userinfo` into the URL (after protocol scheme).
+- fqdn resolved to non-public routable IP address (subject to SSRF risk).
+- selected control characters found (subject to log ingestion risk).
+- TLS protocol lower than TLSv1.3.
+- hasing algorithm lower than SHA2.
+- expired or invalid HTTPS certificate.
+...etc
+```
+
 <br>
 
-Return _True_ when the URL fulfills all of the following
+By default, _**evaluate_url**_ returns _**True**_ when the URL fulfills all of the following
 ```
-1. meets RFC requirements in URL syntax except that
+1. meet RFC requirements in URL syntax except that
     - userinfo is not supported in authority
     - IPv4/6  are not supported in authority
-2. uses https protocol scheme.
-3. uses hostname resolvable to public routable IP address.
-4. uses certificate that employs the latest protocol, strong cipher, & hashing algorithm.
+2. use https protocol scheme.
+3. use hostname resolvable to public routable IP address.
+4. use valid and secure certificate that employs the latest protocol, strong cipher, & hashing algorithm.
 ```
 
 <br>
