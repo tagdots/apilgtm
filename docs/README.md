@@ -1,4 +1,4 @@
-# ![api::lgtm](../assets/apilgtm.png)
+# ![api::lgtm](https://github.com/tagdots/apilgtm/blob/main/assets/apilgtm.png)
 
 ### Usage
 
