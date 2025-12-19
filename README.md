@@ -17,7 +17,7 @@ $ pip install -U apilgtm
 <br>
 
 ## 📚 Documentation
-[Usage](https://github.com/tagdots/apilgtm/tree/main/docs)
+[Usage](https://github.com/tagdots/apilgtm/blob/main/docs/README.md)
 
 <br>
 
