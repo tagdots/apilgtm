@@ -15,15 +15,16 @@ from .utils.url import get_url_components
 
 
 def evaluate_url(
-        user_url: str,
-        allow_http: bool = False,
-        allow_localhost: bool = False,
-        allow_loopback_ip: bool = False,
-        allow_private_ip: bool = False,
-        allow_redirect: bool = True,
-        allow_tlsv12: bool = False,
-        skip_tls: bool = False,
-        enable_log: bool = False) -> bool:
+    user_url: str,
+    allow_http: bool = False,
+    allow_localhost: bool = False,
+    allow_loopback_ip: bool = False,
+    allow_private_ip: bool = False,
+    allow_redirect: bool = True,
+    allow_tlsv12: bool = False,
+    skip_tls: bool = False,
+    enable_log: bool = False,
+) -> bool:
     """
     Evaluate URL from syntax to network and transport layer
 
@@ -45,16 +46,20 @@ def evaluate_url(
     """
     scheme, userinfo, authority, fqdn, port, pre_parsed_path = get_url_components(user_url)
     try:
-        if all([
-            _has_allowed_scheme(user_url, allow_http, enable_log=enable_log),
-            _has_no_basic_auth(userinfo, enable_log=enable_log),
-            _has_no_control_character(user_url, enable_log=enable_log),
-            _has_valid_fqdn_syntax(fqdn, allow_localhost, enable_log=enable_log),
-            _has_valid_authority_syntax(authority, port, enable_log=enable_log),
-            _has_valid_tld(fqdn, allow_localhost, enable_log=enable_log),
-            _has_valid_fqdn_network(fqdn, port, allow_localhost, allow_loopback_ip, allow_private_ip, enable_log=enable_log),
-            _has_valid_tls(scheme, authority, allow_redirect, allow_tlsv12, skip_tls, enable_log=enable_log),
-        ]):
+        if all(
+            [
+                _has_allowed_scheme(user_url, allow_http, enable_log=enable_log),
+                _has_no_basic_auth(userinfo, enable_log=enable_log),
+                _has_no_control_character(user_url, enable_log=enable_log),
+                _has_valid_fqdn_syntax(fqdn, allow_localhost, enable_log=enable_log),
+                _has_valid_authority_syntax(authority, port, enable_log=enable_log),
+                _has_valid_tld(fqdn, allow_localhost, enable_log=enable_log),
+                _has_valid_fqdn_network(
+                    fqdn, port, allow_localhost, allow_loopback_ip, allow_private_ip, enable_log=enable_log
+                ),
+                _has_valid_tls(scheme, authority, allow_redirect, allow_tlsv12, skip_tls, enable_log=enable_log),
+            ]
+        ):
             return True
         else:
             return False  # pragma: no cover

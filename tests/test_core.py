@@ -3,6 +3,7 @@
 """
 Purpose: tests
 """
+
 import unittest
 
 from apilgtm.clean_url import evaluate_url, sanitize_url
