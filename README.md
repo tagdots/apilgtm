@@ -1,6 +1,6 @@
 # ![api::lgtm](https://github.com/tagdots/apilgtm/blob/main/assets/apilgtm.png)
+
 [![CI](https://github.com/tagdots/apilgtm/actions/workflows/ci.yaml/badge.svg?logo=github&labelColor=222222)](https://github.com/tagdots/apilgtm/actions/workflows/ci.yaml)
-[![CodeQL](https://github.com/tagdots/apilgtm/actions/workflows/reusable-codeql.yaml/badge.svg?logo=github&labelColor=222222)](https://github.com/tagdots/apilgtm/actions/workflows/reusable-codeql.yaml)
 [![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/tagdots/apilgtm/refs/heads/badges/badges/coverage.json)](https://github.com/tagdots/apilgtm/actions/workflows/cron-tasks.yaml)
 
 <br>
@@ -10,6 +10,7 @@
 <br>
 
 ## 💪 Install
+
 ```
 $ pip install -U apilgtm
 ```
@@ -17,11 +18,12 @@ $ pip install -U apilgtm
 <br>
 
 ## 📚 Documentation
+
 [Usage](https://github.com/tagdots/apilgtm/blob/main/docs/README.md)
 
 <br>
 
-## 😕  Troubleshooting
+## 😕 Troubleshooting
 
 Open an [issue][issues]
 
@@ -36,7 +38,8 @@ See [Contributing][contributing]
 <br>
 
 ## 🙌 Appreciation
-We hope you find this project helpful, please ⭐ star it.  **Thank you**.
+
+We hope you find this project helpful, please ⭐ star it. **Thank you**.
 
 <br>
 
